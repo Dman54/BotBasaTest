@@ -733,3 +733,13 @@ $('.posts-textarea-tools>*').on('click', function (e) {
       break;
   }
 });
+
+if ($('body').hasClass('landing-page')) {
+  let timer = setTimeout(function (e) {
+    $('#modalquestion').modal();
+  }, 3000);
+}
+$('.close-popup').on('click', function (e) {
+  $(this).closest('.modal-dialog').addClass('d-none');
+  // $('#modalquestion').addClass('d-none');
+});

@@ -401,12 +401,19 @@
 
     <div class="modal fade bd-example-modal-lg" id="modalquestion" tabindex="-1" role="dialog" aria-hidden="true">
         <style>
+            /* #modalquestion {
+                position: fixed;
+            } */
             #modalquestion .modal-content {
                 display: block;
                 background: #D300A5;
                 box-shadow: 0px 10px 20px rgba(255, 0, 214, 0.2);
                 border-radius: 8px;
                 padding: 20px;
+            }
+
+            #modalquestion.modal.fade .modal-dialog {
+                transform: none;
             }
 
             #modalquestion .modal-name {
@@ -449,6 +456,47 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <button type="button" class="btn" data-dismiss="modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-name">
+                    Не нашли ответ на свой вопрос?
+                </div>
+                <div class="modal-text">
+                    Напишите нам в Telegram с помощью бота обратной связи <a
+                        href="http://@LiveBazaBot">@LiveBazaBot</a>.
+                    Мы ответим на все ваши вопросы. </div>
+                <a href="/" class="btn btn-white">
+                    Задать вопрос
+                </a>
+            </div>
+        </div>
+    </div>
+    <style>
+        .modal-dialog {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            top: unset;
+        }
+
+        #modalquestion button[data-dismiss="modal"] {
+            padding: 1px 7px;
+            font-size: 17px;
+            line-height: 24px;
+            right: -12px;
+            top: -12px;
+            position: absolute;
+            z-index: 1051;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #273f68;
+            background-color: #fff;
+        }
+    </style>
+    <div id="modalquestion">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="btn close-popup" data-dismiss="modal">
                     <i class="fas fa-times"></i>
                 </button>
                 <div class="modal-name">
