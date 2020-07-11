@@ -475,7 +475,7 @@
         .modal-dialog {
             position: fixed;
             right: 30px;
-            bottom: 30px;
+            bottom: 20px;
             top: unset;
         }
 
@@ -491,6 +491,14 @@
             cursor: pointer;
             color: #273f68;
             background-color: #fff;
+        }
+
+        @media (max-width: 490px) {
+            .modal-dialog {
+                right: 10px;
+                bottom: 0px;
+                left: 10px;
+            }
         }
     </style>
     <div id="modalquestion">
