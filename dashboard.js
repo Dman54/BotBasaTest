@@ -736,10 +736,9 @@ $('.posts-textarea-tools>*').on('click', function (e) {
 
 if ($('body').hasClass('landing-page')) {
   let timer = setTimeout(function (e) {
-    $('#modalquestion').modal();
+    $('#modalquestion .modal-dialog').removeClass('d-none');
   }, 3000);
 }
-$('.close-popup').on('click', function (e) {
+$('#modalquestion .close-popup').on('click', function (e) {
   $(this).closest('.modal-dialog').addClass('d-none');
-  // $('#modalquestion').addClass('d-none');
 });

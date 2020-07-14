@@ -962,6 +962,10 @@ div.r-blocks .r-blocks-items {
   color: white;
 }
 
+.landing-page div.r-blocks .r-blocks-items {
+  background-color: #003082;
+}
+
 /* div.r-blocks .r-blocks-items:nth-child(2n + 1) {
   border-left: 1px #a7cfff dotted;
   border-right: 1px #a7cfff dotted;
@@ -2042,6 +2046,9 @@ a.table-link:hover {
   background-color: #007bff;
   color: #ffffff;
 }
+.bg-dark-blue {
+  background-color: #003082;
+}
 
 .modal form div.row {
   margin-bottom: 0.75rem;
@@ -2741,6 +2748,70 @@ select.form-control2 {
 .landing-block-right {
   flex: 1;
 }
+
+#modalquestion .modal-dialog {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  top: unset;
+  max-width: 400px;
+}
+
+#modalquestion .modal-content {
+  display: block;
+  background: #D300A5;
+  box-shadow: 0px 10px 20px rgba(255, 0, 214, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+#modalquestion .modal-name {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 130%;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+
+#modalquestion .modal-text {
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 130%;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+
+#modalquestion .modal-text a {
+  color: #FDFFA7;
+}
+
+#modalquestion .btn-white {
+  width: 100%;
+}
+
+#modalquestion button[data-dismiss="modal"] {
+  padding: 1px 7px;
+  font-size: 17px;
+  line-height: 24px;
+  right: -12px;
+  top: -12px;
+  position: absolute;
+  z-index: 1051;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #273f68;
+  background-color: #fff;
+}
+
+@media (max-width: 490px) {
+  #modalquestion .modal-dialog {
+      right: 10px;
+      bottom: 0px;
+      left: 10px;
+  }
+}
+
 .flex-center {
   display: flex;
   flex-direction: column;
