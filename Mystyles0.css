@@ -216,6 +216,7 @@ a.editing:hover {
 #searchhover_added {
   display: none;
   margin-left: 0.5rem;
+  margin-right: 7.5px;
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -1536,20 +1537,14 @@ a.table-link:hover {
   position: relative;
 }
 
-.tab-pane ul.navbar-nav {
+.tab-pane .navbar-nav {
   position: absolute;
   right: 7.5px;
   top: -3rem;
 }
 
-/* .tab-content > ul.navbar-nav {
-  position: absolute;
-  right: 7.5px;
-  top: -3rem;
-} */
-
 /* .catalog-page */
-#custom-content-below-channels.tab-pane ul.navbar-nav {
+#custom-content-below-channels.tab-pane .navbar-nav {
   top: -4rem;
 }
 
@@ -4685,7 +4680,7 @@ a.chat-dialoges-item {
     flex-direction: column;
     left: 0;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.94);
+    background-color: rgba(255, 255, 255, 0.98);
     align-items: center;
     justify-content: space-evenly;
     height: 100%;
@@ -5562,7 +5557,7 @@ a.chat-dialoges-item {
     width: 100%;
   }
 
-  .tab-pane ul.navbar-nav {
+  .tab-pane .navbar-nav {
     position: static;
     padding-left: 7.5px;
   }

@@ -52,6 +52,13 @@
         </div>
       </div>
     </form>
+    <div class="navbar-nav ml-auto">
+      <div class="nav-item d-sm-inline-block">
+        <a href="/" class="btn btn-yellow-light">
+          Войти
+        </a>
+      </div>
+    </div>
   </nav>
 
   <div id="firstwrapper" class="wrapper">
@@ -145,13 +152,13 @@
       <div class="tab-content" id="custom-content-below-tabContent">
         <div class="tab-pane fade active show" id="custom-content-below-channels" role="tabpanel"
           aria-labelledby="custom-content-below-home-tab">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item d-sm-inline-block">
+          <div class="navbar-nav ml-auto">
+            <div class="nav-item d-sm-inline-block">
               <button type="button" class="btn btn-yellow" data-toggle="modal" data-target="#modalCreateChannel">
                 Добавить канал <span class="plus"></span>
               </button>
-            </li>
-          </ul>
+            </div>
+          </div>
 
           <form method="get" enctype="multipart/form-data" id="searchChannels" name="searchChannels"
             action="./searchChannels.php">
@@ -459,26 +466,6 @@
               </select>
             </span>
           </div>
-        </div>
-        <div class="tab-pane fade" id="custom-content-below-bots" role="tabpanel"
-          aria-labelledby="custom-content-below-profile-tab">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item d-sm-inline-block">
-              <button type="button" class="btn btn-yellow" data-toggle="modal" data-target="#modalCreateChannel">
-                Добавить бота <span class="plus"></span>
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div class="tab-pane fade" id="custom-content-below-chats" role="tabpanel"
-          aria-labelledby="custom-content-below-messages-tab">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item d-sm-inline-block">
-              <button type="button" class="btn btn-yellow" data-toggle="modal" data-target="#modalCreateChannel">
-                Добавить чат <span class="plus"></span>
-              </button>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
