@@ -1,3 +1,5 @@
+let GlobalIdChannel = null;
+
 // скрипты для открытия и закрытия меню на небольших экранах (клик по гамбургеру и значку закрытия или самому новому меню)
 $("#gamburger_added, #closeicon_added").on("click", function (e) {
   $(".navbar-nav_added").toggleClass("displayok");
@@ -664,58 +666,6 @@ $('.shop button[type="submit"]').on('click', function (e) {
   $('.shop-order').toggleClass('d-none');
 });
 
-// function format(command, value) {
-//   // value = window.getSelection().toString();
-//   // console.log(command);
-//   // console.log(value);
-//   document.execCommand(command, false, "");
-// }
-
-// $(".posts-textarea-tools b").on('click', function (e) {
-//   e.preventDefault();
-//   document.execCommand("bold", false, null);
-//   return;
-// })
-
-// var editButtons = document.querySelectorAll(".posts-textarea-tools>*");
-
-// [].forEach.call(editButtons, function (el) {
-//   el.addEventListener("click", edit, false);
-// });
-
-// function edit(event) {
-//   event.preventDefault();
-//   let tgN = this.tagName;
-//   if (tgN == "B") {
-//     cmd = "bold";
-//   } else if (tgN == "I") {
-//     cmd = "italic";
-//   } else if (tgN == "S") {
-//     cmd = "strikeThrough";
-//   } else {
-//     cmd = "delete";
-//   }
-//   document.execCommand(cmd, false, null);
-// }
-
-// var editor = document.getElementById("posts-textarea");
-// // Just tackling one of the more cross-browser contenteditable nightmares:
-// function fixEmptyEditor(event) {
-//   // When all content is removed - make sure we always have an empty paragraph
-//   var html = this.innerHTML.replace(/^\s*(&nbsp;\s*)+/g, "").replace(/^\s+|\s+$/g, "");
-//   if (html === "" || html === "<br>" || html === "</br>") {
-//     this.innerHTML = "<p><br></p>";
-//     var rng = document.createRange(),
-//       sel = window.getSelection();
-//     rng.setStart(this.childNodes[0], 0);
-//     rng.collapse(true);
-//     sel.removeAllRanges();
-//     sel.addRange(rng);
-//     event.preventDefault();
-//   }
-// }
-// editor.addEventListener("input", fixEmptyEditor, false);
-
 $('.posts-textarea-tools>*').on('click', function (e) {
   let curindex = $(this).index('.posts-textarea-tools >*');
   e.preventDefault();
@@ -741,4 +691,102 @@ if ($('body').hasClass('landing-page')) {
 }
 $('#modalquestion .close-popup').on('click', function (e) {
   $(this).closest('.modal-dialog').addClass('d-none');
+});
+
+let GlobalIdShopChannel = null;
+let GlobalNameShopChannel = null;
+
+function DrawRightSidebarShop(element, el) {
+  let element2 = {
+    "src": el.find('.img-thumbnail').attr('src'),
+    "alt": el.find('.img-thumbnail').attr('alt'),
+    "title": el.find('.channel-list-title b').text(),
+    "description": el.find('.long-description').html(),
+    "link": el.find('.link-channel').text(),
+    "state": el.find('.channel-subscribes-column').text(),
+    "price": el.find('.price-info span').text(),
+    "date": el.find('.channel-block-button').eq(0).text(),
+    "price2": el.find('.channel-block-button').eq(1).text()
+  }
+  console.log(element2);
+  sidebar.find('.channel-selected').html(`<div class="id-channel-text d-none">Номер текущего канала: <span id='id-channel-in-rightsidebar'>${element.id}</span></div>
+    <div class="channel-top-block">
+      <div class="channel-img">
+        <img src="${element2.src}" alt="${element2.alt}<">
+      </div>
+      <div class="channel-header">
+        <div class="channel-name">${element2.title}</div>
+        <div class="channel-category">${element2.link}</div>
+      </div>
+    </div>
+    <div class="channel-description">
+      <p>${element2.description}</p>
+    </div>
+    <div class="channel-adprice">
+      <div class="channel-adprice-name">
+        Стоимость рекламы:
+      </div>
+      <div class="channel-adprice-content">
+        <div class="channel-adprice-number">
+          ${element2.price}&nbsp;<span class="fa fa-rub"></span>
+        </div>
+      </div>
+    </div>
+    <div class="channel-subscribes">
+      <div class="channel-subscribes-name">Статус: </div>
+      <div class="channel-subscribes-content">
+        ${element2.state}
+      </div>
+    </div>
+    <div class="channel-views">
+      <div class="channel-views-name">Дата создания: </div>
+      <div class="channel-views-content">
+        ${element2.date}
+      </div>
+    </div>
+    <div class="channel-posts">
+      <div class="channel-posts-name">Осталось: </div>
+      <div class="channel-posts-content">${element2.price2}
+        </div>
+    </div>
+    <button type="button" onClick="${$("body").hasClass("catalog-page") ? "goToDashboardCatalog" : "goToDashboard"}(${element.id});$('#closeicon2_added').click();" class="btn btn-blue w100 br0">
+      Подробнее
+    </button>`)
+}
+
+function reloadRightSidebarShop(id, el) {
+  let channel = allChannels.find(function (channel) {
+    return channel.id == id;
+  });
+  DrawRightSidebarShop(channel, el);
+}
+
+function ChangeRightSidebarShop(el) {
+  let curChannelEl = $(el).closest('.channel');
+  id = curChannelEl.find('span')[0].textContent;
+  if (!curChannelEl.hasClass('active')) {
+    $(el).closest('.channels_list_body').find('.channel').removeClass('active');
+    curChannelEl.addClass('active');
+  }
+  if (GlobalIdShopChannel !== id) {
+    reloadRightSidebarShop(id, curChannelEl);
+    if (!sidebar.hasClass('show')) {
+      sidebar.addClass('show');
+      $('body').addClass('left-sidebar-open');
+    }
+    GlobalIdShopChannel = id;
+    GlobalNameShopChannel = allChannels.find(function (element) {
+      return element.id == id;
+    });
+    GlobalNameShopChannel = GlobalNameShopChannel.title;
+  } else {
+    sidebar.toggleClass('show');
+    $('body').toggleClass('left-sidebar-open');
+  }
+}
+
+buttonsToSidebar = $("[data-widget='control-sidebar-shop']");
+buttonsToSidebar.on('click', function (e) {
+  e.preventDefault();
+  ChangeRightSidebarShop(this);
 });

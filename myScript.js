@@ -682,10 +682,6 @@ $('.buy-info').on('click', function (e) {
   let elWithColItemsToBuy = $('.badge.badge-danger.navbar-badge');
   elWithColItemsToBuy.html(+elWithColItemsToBuy.html() + 1);
 });
-
-// $('.posts-textarea-tools >*').on('click', function (e) {
-//   let curindex = $(this).index('.posts-textarea-tools >*');
-// });
 $('.filter-category').on('click', function (e) {
   $('.filter-category').parent().removeClass('active');
   $(this).parent().addClass('active');
