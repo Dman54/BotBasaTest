@@ -2543,6 +2543,9 @@ select.form-control2 {
   color: #222222;
   margin-bottom: 10px;
 }
+.landing-question a {
+  color: #222222;
+}
 .landing-questions-button {
   margin-top: 15px;
 }
@@ -2715,6 +2718,9 @@ select.form-control2 {
 .autoposting-img {
   width: 100%;
   max-width: 265px;
+}
+a.robot-btn {
+  color: white;
 }
 .robot-btn {
   margin-top: 10px;

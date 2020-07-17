@@ -18,7 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
-<body id="firstbody" class="landing-page layout-fixed main-body_added sidebar-collapse">
+<body id="firstbody" class="landing-page layout-fixed main-body_added sidebar-collapse" itemscope
+    itemtype="http://schema.org/WebPage">
+    <meta itemprop="name" content="LinkBaza каталог каналов">
     <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
         <a href="/" class="brand-link">
             <img src="Logo.png" alt="LinkBaza Logo" class="brand-image" />
@@ -66,9 +68,9 @@
             <header class="header">
                 <div class="container-fluid">
                     <div class="header-left">
-                        <div class="header-left-text">
+                        <h1 itemprop="description" class="header-left-text">
                             Аналитика и удобные сервисы для продвижения и ведения ваших каналов в Telegram
-                        </div>
+                        </h1>
                         <div class="header-left-button">
                             <a href="/catalog.html" class="btn btn-yellow-light">
                                 Перейти в каталог
@@ -137,31 +139,37 @@
                         <div class="landing-left-name mb-15px">
                             Частые вопросы
                         </div>
-                        <div class="landing-question">Что такое ночные подборки?</div>
-                        <div class="landing-question">Как добавить свой канал в каталог?</div>
-                        <div class="landing-question mb-0">Есть ли у вас реферальная программа?</div>
+                        <div class="landing-question">
+                            <a href="tg://resolve?domain=LiveBazaBot">Что такое ночные подборки?</a>
+                        </div>
+                        <div class="landing-question">
+                            <a href="tg://resolve?domain=LiveBazaBot">Как добавить свой канал в каталог?</a>
+                        </div>
+                        <div class="landing-question mb-0">
+                            <a href="tg://resolve?domain=LiveBazaBot">Есть ли у вас реферальная программа?</a>
+                        </div>
                         <div class="landing-questions-button">
-                            <button type="submit" name="search_channels" id="search_channels"
+                            <a href="tg://resolve?domain=LiveBazaBot" name="search_channels" id="search_channels"
                                 class="btn btn-primary-dark btn-sm">
                                 Больше ответов смотри здесь
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div class="landing-new-channels landing-block mt-30">
                         <div class="landing-left-name p20">
                             Новое в каталоге
                         </div>
-                        <div class="landing-new-channel">
-                            <a href="tg://resolve?domain=PowerfulRu">
-                                <img alt="Джо Роган в Телеграмме"
+                        <div itemscope itemtype="http://schema.org/Product" class="landing-new-channel">
+                            <a itemprop="url" href="tg://resolve?domain=PowerfulRu">
+                                <img itemprop="image" alt="Джо Роган в Телеграмме"
                                     src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg"
                                     class="b-lazy img-thumbnail b-loaded">
                             </a>
                             <div class="landing-new-channel-right">
-                                <div class="landing-new-channel-title">
+                                <div itemprop="name" class="landing-new-channel-title">
                                     Академия Джо Рогана
                                 </div>
-                                <div class="landing-new-channel-category">
+                                <div itemprop="category" class="landing-new-channel-category">
                                     Юмор и развлечения
                                 </div>
                                 <div class="landing-new-channel-subscribes">
@@ -237,42 +245,45 @@
                         </div>
                     </div>
                     <div class="landing-articles">
-                        <div class="landing-article landing-block mt-30 p20">
-                            <div class="landing-article-name">
+                        <div class="landing-article landing-block mt-30 p20" itemscope
+                            itemtype="http://schema.org/Article">
+                            <div class="landing-article-name" itemprop="name">
                                 Павел Дуров рассказал о будущем Telegram
                             </div>
-                            <div class="landing-article-text">
+                            <div class="landing-article-text" itemprop="description">
                                 На ближайшее время запланированно масштабное обновление
                             </div>
                             <div class="landing-article-readmore">
-                                <a href="/article.html">
+                                <a href="/article.html" itemprop="isPartOf">
                                     Читать дальше
                                 </a>
                             </div>
                         </div>
-                        <div class="landing-article landing-block mt-30 p20">
-                            <div class="landing-article-name">
+                        <div class="landing-article landing-block mt-30 p20" itemscope
+                            itemtype="http://schema.org/Article">
+                            <div class="landing-article-name" itemprop="name">
                                 Мы достигли отметки
                                 в 8 миллиардов пользователей
                             </div>
-                            <div class="landing-article-text">
+                            <div class="landing-article-text" itemprop="description">
                                 Спасибо вам за то что поддерживаете и остаётесь с нами
                             </div>
                             <div class="landing-article-readmore">
-                                <a href="/article.html">
+                                <a href="/article.html" itemprop="isPartOf">
                                     Читать дальше
                                 </a>
                             </div>
                         </div>
-                        <div class="landing-article landing-block mt-30 p20">
-                            <div class="landing-article-name">
+                        <div class="landing-article landing-block mt-30 p20" itemscope
+                            itemtype="http://schema.org/Article">
+                            <div class="landing-article-name" itemprop="name">
                                 Павел Дуров рассказал о будущем Telegram
                             </div>
-                            <div class="landing-article-text">
+                            <div class="landing-article-text" itemprop="description">
                                 На ближайшее время запланированно масштабное обновление
                             </div>
                             <div class="landing-article-readmore">
-                                <a href="/article.html">
+                                <a href="/article.html" itemprop="isPartOf">
                                     Читать дальше
                                 </a>
                             </div>
@@ -348,9 +359,9 @@
                             <div class="landing-right-text">
                                 В боте, так же, доступны и другие возможности по продвижению вашего канала
                             </div>
-                            <button type="submit" class="robot-btn btn btn-primary-dark btn-sm">
+                            <a href="tg://resolve?domain=LinkBazaBot" class="robot-btn btn btn-primary-dark btn-sm">
                                 <i class="robot-img-btn"></i> Открыть бота в Telegram
-                            </button>
+                            </a>
                         </div>
                         <div class="landing-block-right flex-center">
                             <img class="robot-img" src="./robot.svg" alt="бот в Telegram">
