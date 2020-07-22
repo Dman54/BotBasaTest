@@ -1,0 +1,62 @@
+<div class="confirm-popup" id="complete-order-confirm" style="display: block;">
+  <i class="close"></i>
+  <div class="confirm-content">
+    <h2>Подтверждение</h2>
+    <p>Вы разместили рекламный обзор в соответствии с рекламными требованиями и обязуетесь не удалять и не изменять
+      рекламный пост в течение суток после размещения.</p>
+    <div class="input-wrapper-row">
+      <input id="post_link" name="post_link" placeholder="Ссылка на пост (https://t.me/channel/xxx)">
+    </div>
+    <div class="custom-comment" style="display: none;">
+      <p>Комментарий</p>
+      <div class="input-wrapper">
+        <textarea id="correction_comment_id" rows="4"
+          style="overflow: hidden scroll; overflow-wrap: break-word;"></textarea>
+      </div>
+    </div>
+    <button type="button" class="confirm-btn">Да</button>
+    <button type="button" class="cancel-btn">Нет</button>
+  </div>
+</div>
+
+<div class="confirm-popup" id="complete-order-disapprove-by-user" style="display: block;">
+  <i class="close"></i>
+  <div class="confirm-content">
+    <h2>Ошибка выполнения</h2>
+    <p>Пожалуйста опишите подробно, в чем проблема с размещенным постом</p>
+    <div class="input-wrapper">
+      <textarea id="description" rows="4" style="overflow-x: hidden; overflow-wrap: break-word;"></textarea>
+    </div>
+    <button type="button" class="confirm-btn">Подтвердить</button>
+    <button type="button" class="cancel-btn">Закрыть</button>
+  </div>
+</div>
+
+<div class="confirm-popup" id="complete-order-approve-by-user" style="display: block;">
+  <i class="close"></i>
+  <div class="confirm-content">
+    <h2>Подтверждение</h2>
+    <p>Вы подтверждаете что владелец канала разместил ваше объявление?</p>
+    <input type="hidden" id="review_rating_id">
+    <p class="rating-title">Оцение результат</p>
+
+    <div class="stars-wrapper">
+      <div class="stars">
+        <span class="review-star" data-star="1"></span>
+        <span class="review-star" data-star="2"></span>
+        <span class="review-star" data-star="3"></span>
+        <span class="review-star" data-star="4"></span>
+        <span class="review-star" data-star="5"></span>
+      </div>
+    </div>
+    <div class="custom-comment">
+      <p>Оставить отзыв</p>
+      <div class="input-wrapper">
+        <textarea id="review_comment_id" rows="4"
+          style="overflow: hidden scroll; overflow-wrap: break-word;"></textarea>
+      </div>
+    </div>
+    <button type="button" class="confirm-btn">Да</button>
+    <button type="button" class="cancel-btn">Нет</button>
+  </div>
+</div>

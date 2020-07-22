@@ -2512,7 +2512,8 @@ select.form-control2 {
 .landing-right {
   flex: 2;
 }
-.landing-right h2 {
+.landing-right h2,
+.landing-right h1 {
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 30px;
@@ -2749,7 +2750,38 @@ a.robot-btn {
 .landing-block-right {
   flex: 1;
 }
-
+.blog-block .landing-block-left {
+  flex: none;
+}
+/* .blog-block .landing-block-right {
+  flex: none;
+} */
+.blog-block.landing-block-flex {
+  justify-content: unset;
+}
+.blog-block.landing-right2 {
+  padding: 18px;
+  padding-left: 13px;
+  padding-right: 13px;
+  overflow-y: unset;
+}
+.landing-block-image img {
+  width: 280px;
+}
+.article-img img {
+  width: 100%;
+}
+.article-text-block {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 16px;
+}
+.article-list {
+  list-style: none;
+}
+.article-list li {
+  margin-top: 6px;
+}
 #modalquestion .modal-dialog {
   position: fixed;
   right: 30px;
@@ -5260,6 +5292,9 @@ a.chat-dialoges-item {
 }
 
 @media (max-width: 684px) {
+  .blog-block .landing-block-left {
+    margin-right: 0;
+  }
   .landing-block-left.flex-center {
     display: flex;
   }
@@ -5269,7 +5304,8 @@ a.chat-dialoges-item {
   .landing-right {
     margin-bottom: 15px;
   }
-  .landing-right h2 {
+  .landing-right h2,
+  .landing-right h1 {
     font-size: 22px;
   }
   .landing-page .landing-block-flex {
@@ -6197,3 +6233,6 @@ a.chat-dialoges-item {
 .card-title {
   line-height: 1.2;
 }
+/* .flex-footer {
+  display: flex;
+} */
