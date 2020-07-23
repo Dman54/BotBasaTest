@@ -708,7 +708,7 @@ function DrawRightSidebarShop(element, el) {
     "date": el.find('.channel-block-button').eq(0).text(),
     "price2": el.find('.channel-block-button').eq(1).text()
   }
-  console.log(element2);
+  // console.log(element2);
   sidebar.find('.channel-selected').html(`<div class="id-channel-text d-none">Номер текущего канала: <span id='id-channel-in-rightsidebar'>${element.id}</span></div>
     <div class="channel-top-block">
       <div class="channel-img">
@@ -716,7 +716,12 @@ function DrawRightSidebarShop(element, el) {
       </div>
       <div class="channel-header">
         <div class="channel-name">${element2.title}</div>
-        <div class="channel-category">${element2.link}</div>
+        <div class="channel-category">Юмор и развлечения</div>
+      </div>
+    </div>
+    <div class="channel-views">
+      <div class="channel-views-content">
+        ${element2.link}
       </div>
     </div>
     <div class="channel-description">
@@ -732,11 +737,10 @@ function DrawRightSidebarShop(element, el) {
         </div>
       </div>
     </div>
-    <div class="channel-subscribes">
-      <div class="channel-subscribes-name">Статус: </div>
-      <div class="channel-subscribes-content">
-        ${element2.state}
-      </div>
+    <div class="channel-posts">
+      <div class="channel-posts-name">Осталось: </div>
+      <div class="channel-posts-content">${element2.price2}
+        </div>
     </div>
     <div class="channel-views">
       <div class="channel-views-name">Дата создания: </div>
@@ -744,10 +748,11 @@ function DrawRightSidebarShop(element, el) {
         ${element2.date}
       </div>
     </div>
-    <div class="channel-posts">
-      <div class="channel-posts-name">Осталось: </div>
-      <div class="channel-posts-content">${element2.price2}
-        </div>
+    <div class="channel-subscribes">
+      <div class="channel-subscribes-name">Статус: </div>
+      <div class="channel-subscribes-content">
+        ${element2.state}
+      </div>
     </div>
     <button type="button" onClick="${$("body").hasClass("catalog-page") ? "goToDashboardCatalog" : "goToDashboard"}(${element.id});$('#closeicon2_added').click();" class="btn btn-blue w100 br0">
       Подробнее
