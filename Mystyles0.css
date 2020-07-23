@@ -1,3 +1,6 @@
+body {
+  font-family: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Roboto","Oxygen",Helvetica,"Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
 .flex-container {
   display: flex;
 }
@@ -1193,6 +1196,60 @@ div.filter-sort.asc span:last-child:after {
   min-width: 83px;
 }
 
+.orders_sortpanel.channels-sortpanel > *:first-child,
+.orders_list.channels_list_body div.channel > *:first-child {
+  flex: 8 1 0%;
+  min-width: 244px;
+}
+.orders_sortpanel.channels-sortpanel > *:nth-child(2),
+.orders_list.channels_list_body div.channel > *:nth-child(2) {
+  flex: 3 1 0%;
+  min-width: 90px;
+}
+.orders_list.channels_list_body div.channel > *:nth-child(2) .table-link {
+  cursor: pointer;
+}
+.orders_sortpanel.channels-sortpanel > *:nth-child(3),
+.orders_list.channels_list_body div.channel > *:nth-child(3) {
+  flex: 5 1 0%;
+  min-width: 162px;
+  cursor: default;
+}
+.orders_list.channels_list_body div.channel > *:nth-child(3) >*:first-child {
+  cursor: pointer;
+  font-size: 14px;
+}
+.orders_sortpanel.channels-sortpanel > *:nth-child(4),
+.orders_list.channels_list_body div.channel > *:nth-child(4) {
+  flex: 5 1 0%;
+  min-width: 166px;
+}
+.orders_sortpanel.channels-sortpanel > *:nth-child(5),
+.orders_list.channels_list_body div.channel > *:nth-child(5) {
+  flex: 3 1 0%;
+  min-width: 78px;
+}
+.orders_sortpanel.channels-sortpanel > *:nth-child(6),
+.orders_list.channels_list_body div.channel > *:nth-child(6) {
+  flex: 2 1 0%;
+  min-width: 58px;
+}
+.orders_sortpanel.channels-sortpanel > *:nth-child(7),
+.orders_list.channels_list_body div.channel > *:nth-child(7) {
+  flex: 2 1 0%;
+  min-width: 62px;
+}
+.orders_sortpanel.channels-sortpanel > *:nth-child(8),
+.orders_list.channels_list_body div.channel > *:nth-child(8) {
+  flex: 4 1 0%;
+  min-width: 126px;
+}
+.orders_sortpanel.channels-sortpanel > *:last-child,
+.orders_list.channels_list_body div.channel > *:last-child {
+  flex: 3 1 0%;
+  min-width: 86px;
+}
+
 .select-tabs {
   display: none;
   margin-top: 1rem;
@@ -1541,7 +1598,8 @@ a.table-link:hover {
   padding-bottom: 2.25rem;
 }
 
-.channel-selected > button {
+.channel-selected > button,
+.channel-selected > a.btn.w100 {
   /* position: absolute; */
   position: fixed;
   width: 320px;
@@ -6233,6 +6291,18 @@ a.chat-dialoges-item {
 /* .shop-order .input-wrapper textarea:focus {
 
 } */
+.order_status .btn:first-of-type {
+  margin-bottom: 8px;
+}
+.order_status >*:first-child {
+  margin-bottom: 8px;
+}
+.order_status .btn {
+  width: 126px;
+  line-height: 1.15;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
 .field_hint {
   font-size: 14px;
   color: rgba(0,0,0,.5);

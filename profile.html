@@ -319,8 +319,8 @@
         <select class="select-tabs form-control">
           <option value="0">Личный кабинет</option>
           <option value="1">Реферальная программа</option>
-          <option value="2">Мои заказы +</option>
-          <option value="3">Мои заказы -</option>
+          <option value="2">Заказы на покупку</option>
+          <option value="3">Заказы на продажу</option>
         </select>
         <ul class="nav nav-tabs" id="custom-content-below-tab12" role="tablist">
           <li class="nav-item">
@@ -336,12 +336,12 @@
           <li class="nav-item">
             <a class="nav-link" id="custom-content-below-checouts-tab12" data-toggle="pill"
               href="#custom-content-below-mychats121" role="tab" aria-controls="custom-content-below-mychats121"
-              aria-selected="false">Мои заказы +</a>
+              aria-selected="false">Заказы на покупку</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="custom-content-below-checouts-tab13" data-toggle="pill"
               href="#custom-content-below-mychats122" role="tab" aria-controls="custom-content-below-mychats122"
-              aria-selected="false">Мои заказы -</a>
+              aria-selected="false">Заказы на продажу</a>
           </li>
         </ul>
       </div>
@@ -573,41 +573,49 @@
         <div class="tab-pane fade" id="custom-content-below-mychats121" role="tabpanel"
           aria-labelledby="custom-content-below-checouts-tab12">
           <div class="container-fluid">
-            <div class="channels-sortpanel">
+            <div class="channels-sortpanel orders_sortpanel">
               <span class="select-wrapper">
                 <select id="shopfilterSelect" name="shopfilterSelect" class="form-control2">
                   <option selected="" disabled="" value="Сортировать по">Сортировать по</option>
                   <option value="Название">Название</option>
-                  <option value="Рекламный текст">Рекламный текст</option>
+                  <option value="Название">Подписчики</option>
                   <option value="Ссылка">Ссылка</option>
+                  <option value="Рекламный текст">Рекламный текст</option>
                   <option value="Цена">Цена</option>
                   <option value="Дата создания">Дата создания</option>
                   <option value="Осталось">Осталось</option>
                   <option value="Статус">Статус</option>
                 </select>
               </span>
-              <div class="filter filter-sort" data-sort="description" data-direction="desc">
-                <span title="Ссылка на канал">Ссылка</span>
+              <div class="filter filter-sort desc" data-sort="members" data-direction="desc">
+                <span title="Количество подписчиков на данный момент">Подписчики</span>
               </div>
-              <div class="filter filter-sort" data-sort="members" data-direction="desc">
+              <div class="filter filter-sort" data-sort="link" data-direction="desc">
+                <span title="Ссылка на заказ">Ссылка</span>
+              </div>
+              <div class="filter filter-sort" data-sort="description" data-direction="desc">
                 <span title="Рекламный текст">Рекламный текст</span>
               </div>
               <div class="filter filter-sort" data-sort="ad_price" data-direction="desc">
                 <span title="Цена">Цена</span>
               </div>
-              <div class="filter filter-sort" data-sort="raitings" data-direction="desc">
+              <div class="filter filter-sort" data-sort="date_creation" data-direction="desc">
                 <span title="Дата создания">Создан</span>
               </div>
-              <div class="filter filter-sort" data-sort="favorites" data-direction="desc">
+              <div class="filter filter-sort" data-sort="time_left" data-direction="desc">
                 <span title="Осталось">Осталось</span>
               </div>
-              <div class="filter filter-sort desc" data-sort="members_growth" data-direction="desc">
+              <div class="filter filter-sort desc" data-sort="state" data-direction="desc">
                 <span title="Статус заказа">Статус</span>
+              </div>
+              <div class="filter filter-sort invisible" data-sort="detailed" data-direction="desc">
+                <span title="Подробнее"></span>
               </div>
             </div>
           </div>
-          <div class="inner-left preview" id="shopList">
-            <div class="data-container container-fluid channels_list_body sticky-canceller-container">
+          <div class="inner-left preview" id="shopList_buy">
+            <div
+              class="buy_orders_list orders_list data-container container-fluid channels_list_body sticky-canceller-container">
 
               <div class="channel ribboned noted top">
                 <div class="channel-first-part">
@@ -635,65 +643,19 @@
                     </div>
                   </div>
                 </div>
-                <div title="Ссылка на канал" class="link-channel">
-                  http://t.me/LinkBazaBot
+                <div class="channel-subscribes-column">
+                  <i title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="fas fa-user-friends"></i>
+                  <span title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="table-link">
+                    7779222
+                  </span>
                 </div>
-                <div title="Рекламный текст" class="long-description">
-                  ‼️ Бот для раскрутки телеграмм каналов
-                  ✅ Честные способы раскрутки через подборки
-                  ✅ Возможность создавать «свои» подборки, в которых будут участвовать только приглашённые Вами каналы.
+                <div title="Ссылка на канал" class="link-channel" data-widget="control-sidebar-shop" data-slide="true">
+                  <span>http://t.me/LinkBazaBot</span>
                 </div>
-                <div class="buycolumn">
-                  <div class="buycolumn-text">Реклама:</div>
-                  <div data-widget="control-sidebar-shop" data-slide="true" title="Цена рекламы на канале"
-                    class="price-info btn btn-blue">
-                    <span>12610</span>&nbsp;<span class="fa fa-rub price-icon active"></span>
-                  </div>
-                </div>
-                <div class="channel-block-button">
-                  31.12.20
-                </div>
-                <div class="channel-block-button">
-                  19 часов
-                </div>
-                <div title="Статус заказа" class="channel-subscribes-column">
-                  Выполнен
-                </div>
-              </div>
-              <div class="channel-info">
-                <input type="text" placeholder="Введите текст заметки">
-              </div>
-
-              <div class="channel ribboned noted top new">
-                <div class="channel-first-part">
-                  <span class="d-none">-1001379358740</span>
-                  <div class="position-relative" data-widget="control-sidebar-shop" data-slide="true">
-                    <img title="Изображение канала" alt="Hot🔥Ladies💦"
-                      src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
-                    <span class="verified-channel-img">
-                      <img src="tgstat_images/verified.png"
-                        title="У канала есть подтвержденный владелец на сайте LinkBaza">
-                    </span>
-                  </div>
-                  <div class="channel-block-title">
-                    <div title="Название канала" class="channel-list-title" data-widget="control-sidebar-shop"
-                      data-slide="true">
-                      <b>Hot🔥Ladies💦</b>
-                    </div>
-                    <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank"
-                      class="goToChannel">
-                      <span>Перейти на канал</span>
-                      <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    <div class="d-none">
-                      <span class="channel_category_id">27</span>
-                    </div>
-                  </div>
-                </div>
-                <div title="Ссылка на канал" class="link-channel">
-                  http://t.me/LinkBazaBot
-                </div>
-                <div title="Рекламный текст" class="long-description">
+                <div title="Рекламный текст" class="long-description" data-widget="control-sidebar-shop"
+                  data-slide="true">
                   ‼️ Бот для раскрутки телеграмм каналов
                   ✅ Честные способы раскрутки через подборки
                   ✅ Возможность создавать «свои» подборки, в которых будут участвовать только приглашённые Вами каналы.
@@ -705,14 +667,227 @@
                     <span>53410</span>&nbsp;<span class="fa fa-rub price-icon active"></span>
                   </div>
                 </div>
-                <div class="channel-block-button">
-                  31.12.20
+                <div class="order_start_date">
+                  <span>20.07.20</span>
                 </div>
-                <div class="channel-block-button">
-                  21 минута
+                <div class="order_time_left">
+                  <span>19 часов</span>
                 </div>
-                <div title="Статус заказа" class="channel-subscribes-column">
-                  Отменен В работе
+                <div title="Статус заказа" class="order_status">
+                  <div>В ожидании</div>
+                </div>
+                <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
+                  <a href="./dashboard.html" class="btn btn-primary btn-sm r-action-btn">Подробнее</a>
+                </div>
+              </div>
+              <div class="channel-info">
+                <input type="text" placeholder="Введите текст заметки">
+              </div>
+
+              <div class="channel ribboned noted top new">
+                <div class="channel-first-part">
+                  <span class="d-none">-1001371894354</span>
+                  <div class="position-relative" data-widget="control-sidebar-shop" data-slide="true">
+                    <img title="Изображение канала" alt="Академия Джо Рогана"
+                      src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                    <span class="verified-channel-img">
+                      <img src="tgstat_images/verified.png"
+                        title="У канала есть подтвержденный владелец на сайте LinkBaza">
+                    </span>
+                  </div>
+                  <div class="channel-block-title">
+                    <div title="Название канала" class="channel-list-title" data-widget="control-sidebar-shop"
+                      data-slide="true">
+                      <b>Академия Джо Рогана</b>
+                    </div>
+                    <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank"
+                      class="goToChannel">
+                      <span>Перейти на канал</span>
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div class="d-none">
+                      <span class="channel_category_id">21</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-subscribes-column">
+                  <i title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="fas fa-user-friends"></i>
+                  <span title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="table-link">
+                    7779222
+                  </span>
+                </div>
+                <div title="Ссылка на канал" class="link-channel" data-widget="control-sidebar-shop" data-slide="true">
+                  <span>http://t.me/LinkBazaBot</span>
+                </div>
+                <div title="Рекламный текст" class="long-description" data-widget="control-sidebar-shop"
+                  data-slide="true">
+                  ‼️ Бот для раскрутки телеграмм каналов
+                  ✅ Честные способы раскрутки через подборки
+                  ✅ Возможность создавать «свои» подборки, в которых будут участвовать только приглашённые Вами каналы.
+                </div>
+                <div class="buycolumn">
+                  <div class="buycolumn-text">Реклама:</div>
+                  <div data-widget="control-sidebar-shop" data-slide="true" title="Цена рекламы на канале"
+                    class="price-info btn btn-blue">
+                    <span>53410</span>&nbsp;<span class="fa fa-rub price-icon active"></span>
+                  </div>
+                </div>
+                <div class="order_start_date">
+                  <span>21.07.20</span>
+                </div>
+                <div class="order_time_left">
+                  <span>21 минута</span>
+                </div>
+                <div title="Статус заказа" class="order_status">
+                  <div>В работе</div>
+                </div>
+                <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
+                  <a href="./dashboard.html" class="btn btn-primary btn-sm r-action-btn">Подробнее</a>
+                </div>
+              </div>
+              <div class="channel-info">
+                <input type="text" placeholder="Введите текст заметки">
+              </div>
+
+              <div class="channel ribboned noted top new">
+                <div class="channel-first-part">
+                  <span class="d-none">-1001371894354</span>
+                  <div class="position-relative" data-widget="control-sidebar-shop" data-slide="true">
+                    <img title="Изображение канала" alt="Академия Джо Рогана"
+                      src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                    <span class="verified-channel-img">
+                      <img src="tgstat_images/verified.png"
+                        title="У канала есть подтвержденный владелец на сайте LinkBaza">
+                    </span>
+                  </div>
+                  <div class="channel-block-title">
+                    <div title="Название канала" class="channel-list-title" data-widget="control-sidebar-shop"
+                      data-slide="true">
+                      <b>Академия Джо Рогана</b>
+                    </div>
+                    <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank"
+                      class="goToChannel">
+                      <span>Перейти на канал</span>
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div class="d-none">
+                      <span class="channel_category_id">21</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-subscribes-column">
+                  <i title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="fas fa-user-friends"></i>
+                  <span title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="table-link">
+                    7779222
+                  </span>
+                </div>
+                <div title="Ссылка на канал" class="link-channel" data-widget="control-sidebar-shop" data-slide="true">
+                  <span>http://t.me/LinkBazaBot</span>
+                </div>
+                <div title="Рекламный текст" class="long-description" data-widget="control-sidebar-shop"
+                  data-slide="true">
+                  ‼️ Бот для раскрутки телеграмм каналов
+                  ✅ Честные способы раскрутки через подборки
+                  ✅ Возможность создавать «свои» подборки, в которых будут участвовать только приглашённые Вами каналы.
+                </div>
+                <div class="buycolumn">
+                  <div class="buycolumn-text">Реклама:</div>
+                  <div data-widget="control-sidebar-shop" data-slide="true" title="Цена рекламы на канале"
+                    class="price-info btn btn-blue">
+                    <span>53410</span>&nbsp;<span class="fa fa-rub price-icon active"></span>
+                  </div>
+                </div>
+                <div class="order_start_date">
+                  <span>21.07.20</span>
+                </div>
+                <div class="order_time_left">
+                  <span>-</span>
+                </div>
+                <div title="Статус заказа" class="order_status">
+                  <div>Размещен</div>
+                  <button type="button" class="btn btn-yellow" data-toggle="modal" data-target="#order_approve">
+                    Принять
+                  </button>
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#order_disapprove">
+                    Пожаловаться
+                  </button>
+                </div>
+                <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
+                  <a href="./dashboard.html" class="btn btn-primary btn-sm r-action-btn">Подробнее</a>
+                </div>
+              </div>
+              <div class="channel-info">
+                <input type="text" placeholder="Введите текст заметки">
+              </div>
+
+              <div class="channel ribboned noted top new">
+                <div class="channel-first-part">
+                  <span class="d-none">-1001371894354</span>
+                  <div class="position-relative" data-widget="control-sidebar-shop" data-slide="true">
+                    <img title="Изображение канала" alt="Академия Джо Рогана"
+                      src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                    <span class="verified-channel-img">
+                      <img src="tgstat_images/verified.png"
+                        title="У канала есть подтвержденный владелец на сайте LinkBaza">
+                    </span>
+                  </div>
+                  <div class="channel-block-title">
+                    <div title="Название канала" class="channel-list-title" data-widget="control-sidebar-shop"
+                      data-slide="true">
+                      <b>Академия Джо Рогана</b>
+                    </div>
+                    <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank"
+                      class="goToChannel">
+                      <span>Перейти на канал</span>
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div class="d-none">
+                      <span class="channel_category_id">21</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-subscribes-column">
+                  <i title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="fas fa-user-friends"></i>
+                  <span title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="table-link">
+                    7779222
+                  </span>
+                </div>
+                <div title="Ссылка на канал" class="link-channel" data-widget="control-sidebar-shop" data-slide="true">
+                  <span>http://t.me/LinkBazaBot</span>
+                </div>
+                <div title="Рекламный текст" class="long-description" data-widget="control-sidebar-shop"
+                  data-slide="true">
+                  ‼️ Бот для раскрутки телеграмм каналов
+                  ✅ Честные способы раскрутки через подборки
+                  ✅ Возможность создавать «свои» подборки, в которых будут участвовать только приглашённые Вами каналы.
+                </div>
+                <div class="buycolumn">
+                  <div class="buycolumn-text">Реклама:</div>
+                  <div data-widget="control-sidebar-shop" data-slide="true" title="Цена рекламы на канале"
+                    class="price-info btn btn-blue">
+                    <span>53410</span>&nbsp;<span class="fa fa-rub price-icon active"></span>
+                  </div>
+                </div>
+                <div class="order_start_date">
+                  <span>21.07.20</span>
+                </div>
+                <div class="order_time_left">
+                  <span>-</span>
+                </div>
+                <div title="Статус заказа" class="order_status">
+                  <div>Выполнен</div>
+                  <button type="button" class="btn btn-yellow">
+                    Заказать ещё
+                  </button>
+                </div>
+                <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
+                  <a href="./dashboard.html" class="btn btn-primary btn-sm r-action-btn">Подробнее</a>
                 </div>
               </div>
               <div class="channel-info">
@@ -725,26 +900,362 @@
         <div class="tab-pane fade" id="custom-content-below-mychats122" role="tabpanel"
           aria-labelledby="custom-content-below-checouts-tab13">
           <div class="container-fluid">
+            <div class="channels-sortpanel orders_sortpanel">
+              <span class="select-wrapper">
+                <select id="shopfilterSelect" name="shopfilterSelect" class="form-control2">
+                  <option selected="" disabled="" value="Сортировать по">Сортировать по</option>
+                  <option value="Название">Название</option>
+                  <option value="Название">Подписчики</option>
+                  <option value="Ссылка">Ссылка</option>
+                  <option value="Рекламный текст">Рекламный текст</option>
+                  <option value="Цена">Цена</option>
+                  <option value="Дата создания">Дата создания</option>
+                  <option value="Осталось">Осталось</option>
+                  <option value="Статус">Статус</option>
+                </select>
+              </span>
+              <div class="filter filter-sort desc" data-sort="members" data-direction="desc">
+                <span title="Количество подписчиков на данный момент">Подписчики</span>
+              </div>
+              <div class="filter filter-sort" data-sort="link" data-direction="desc">
+                <span title="Ссылка на заказ">Ссылка</span>
+              </div>
+              <div class="filter filter-sort" data-sort="description" data-direction="desc">
+                <span title="Рекламный текст">Рекламный текст</span>
+              </div>
+              <div class="filter filter-sort" data-sort="ad_price" data-direction="desc">
+                <span title="Цена">Цена</span>
+              </div>
+              <div class="filter filter-sort" data-sort="date_creation" data-direction="desc">
+                <span title="Дата создания">Создан</span>
+              </div>
+              <div class="filter filter-sort" data-sort="time_left" data-direction="desc">
+                <span title="Осталось">Осталось</span>
+              </div>
+              <div class="filter filter-sort desc" data-sort="state" data-direction="desc">
+                <span title="Статус заказа">Статус</span>
+              </div>
+              <div class="filter filter-sort invisible" data-sort="detailed" data-direction="desc">
+                <span title="Подробнее"></span>
+              </div>
+            </div>
+          </div>
+          <div class="inner-left preview" id="shopList_sell">
+            <div
+              class="sell_orders_list orders_list data-container container-fluid channels_list_body sticky-canceller-container">
 
+              <div class="channel ribboned noted top new">
+                <div class="channel-first-part">
+                  <span class="d-none">-1001371894354</span>
+                  <div class="position-relative" data-widget="control-sidebar-shop" data-slide="true">
+                    <img title="Изображение канала" alt="Академия Джо Рогана"
+                      src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                    <span class="verified-channel-img">
+                      <img src="tgstat_images/verified.png"
+                        title="У канала есть подтвержденный владелец на сайте LinkBaza">
+                    </span>
+                  </div>
+                  <div class="channel-block-title">
+                    <div title="Название канала" class="channel-list-title" data-widget="control-sidebar-shop"
+                      data-slide="true">
+                      <b>Академия Джо Рогана</b>
+                    </div>
+                    <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank"
+                      class="goToChannel">
+                      <span>Перейти на канал</span>
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div class="d-none">
+                      <span class="channel_category_id">21</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-subscribes-column">
+                  <i title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="fas fa-user-friends"></i>
+                  <span title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="table-link">
+                    7779222
+                  </span>
+                </div>
+                <div title="Ссылка на канал" class="link-channel" data-widget="control-sidebar-shop" data-slide="true">
+                  <span>http://t.me/LinkBazaBot</span>
+                </div>
+                <div title="Рекламный текст" class="long-description" data-widget="control-sidebar-shop"
+                  data-slide="true">
+                  ‼️ Бот для раскрутки телеграмм каналов
+                  ✅ Честные способы раскрутки через подборки
+                  ✅ Возможность создавать «свои» подборки, в которых будут участвовать только приглашённые Вами каналы.
+                </div>
+                <div class="buycolumn">
+                  <div class="buycolumn-text">Реклама:</div>
+                  <div data-widget="control-sidebar-shop" data-slide="true" title="Цена рекламы на канале"
+                    class="price-info btn btn-blue">
+                    <span>53410</span>&nbsp;<span class="fa fa-rub price-icon active"></span>
+                  </div>
+                </div>
+                <div class="order_start_date">
+                  <span>21.07.20</span>
+                </div>
+                <div class="order_time_left">
+                  <span>21 минута</span>
+                </div>
+                <div title="Статус заказа" class="order_status">
+                  <button type="button" class="btn btn-yellow">
+                    Взять в работу
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    Отменить
+                  </button>
+                </div>
+                <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
+                  <a href="./dashboard.html" class="btn btn-primary btn-sm r-action-btn">Подробнее</a>
+                </div>
+              </div>
+              <div class="channel-info">
+                <input type="text" placeholder="Введите текст заметки">
+              </div>
+
+              <div class="channel ribboned noted top new">
+                <div class="channel-first-part">
+                  <span class="d-none">-1001371894354</span>
+                  <div class="position-relative" data-widget="control-sidebar-shop" data-slide="true">
+                    <img title="Изображение канала" alt="Академия Джо Рогана"
+                      src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                    <span class="verified-channel-img">
+                      <img src="tgstat_images/verified.png"
+                        title="У канала есть подтвержденный владелец на сайте LinkBaza">
+                    </span>
+                  </div>
+                  <div class="channel-block-title">
+                    <div title="Название канала" class="channel-list-title" data-widget="control-sidebar-shop"
+                      data-slide="true">
+                      <b>Академия Джо Рогана</b>
+                    </div>
+                    <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank"
+                      class="goToChannel">
+                      <span>Перейти на канал</span>
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div class="d-none">
+                      <span class="channel_category_id">21</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-subscribes-column">
+                  <i title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="fas fa-user-friends"></i>
+                  <span title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="table-link">
+                    7779222
+                  </span>
+                </div>
+                <div title="Ссылка на канал" class="link-channel" data-widget="control-sidebar-shop" data-slide="true">
+                  <span>http://t.me/LinkBazaBot</span>
+                </div>
+                <div title="Рекламный текст" class="long-description" data-widget="control-sidebar-shop"
+                  data-slide="true">
+                  ‼️ Бот для раскрутки телеграмм каналов
+                  ✅ Честные способы раскрутки через подборки
+                  ✅ Возможность создавать «свои» подборки, в которых будут участвовать только приглашённые Вами каналы.
+                </div>
+                <div class="buycolumn">
+                  <div class="buycolumn-text">Реклама:</div>
+                  <div data-widget="control-sidebar-shop" data-slide="true" title="Цена рекламы на канале"
+                    class="price-info btn btn-blue">
+                    <span>53410</span>&nbsp;<span class="fa fa-rub price-icon active"></span>
+                  </div>
+                </div>
+                <div class="order_start_date">
+                  <span>21.07.20</span>
+                </div>
+                <div class="order_time_left">
+                  <span>21 минута</span>
+                </div>
+                <div title="Статус заказа" class="order_status">
+                  <button type="button" class="btn btn-yellow" data-toggle="modal" data-target="#order_verification">
+                    Отправить на&nbsp;проверку
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    Отменить
+                  </button>
+                </div>
+                <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
+                  <a href="./dashboard.html" class="btn btn-primary btn-sm r-action-btn">Подробнее</a>
+                </div>
+              </div>
+              <div class="channel-info">
+                <input type="text" placeholder="Введите текст заметки">
+              </div>
+
+              <div class="channel ribboned noted top new">
+                <div class="channel-first-part">
+                  <span class="d-none">-1001371894354</span>
+                  <div class="position-relative" data-widget="control-sidebar-shop" data-slide="true">
+                    <img title="Изображение канала" alt="Академия Джо Рогана"
+                      src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                    <span class="verified-channel-img">
+                      <img src="tgstat_images/verified.png"
+                        title="У канала есть подтвержденный владелец на сайте LinkBaza">
+                    </span>
+                  </div>
+                  <div class="channel-block-title">
+                    <div title="Название канала" class="channel-list-title" data-widget="control-sidebar-shop"
+                      data-slide="true">
+                      <b>Академия Джо Рогана</b>
+                    </div>
+                    <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank"
+                      class="goToChannel">
+                      <span>Перейти на канал</span>
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div class="d-none">
+                      <span class="channel_category_id">21</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-subscribes-column">
+                  <i title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="fas fa-user-friends"></i>
+                  <span title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="table-link">
+                    7779222
+                  </span>
+                </div>
+                <div title="Ссылка на канал" class="link-channel" data-widget="control-sidebar-shop" data-slide="true">
+                  <span>http://t.me/LinkBazaBot</span>
+                </div>
+                <div title="Рекламный текст" class="long-description" data-widget="control-sidebar-shop"
+                  data-slide="true">
+                  ‼️ Бот для раскрутки телеграмм каналов
+                  ✅ Честные способы раскрутки через подборки
+                  ✅ Возможность создавать «свои» подборки, в которых будут участвовать только приглашённые Вами каналы.
+                </div>
+                <div class="buycolumn">
+                  <div class="buycolumn-text">Реклама:</div>
+                  <div data-widget="control-sidebar-shop" data-slide="true" title="Цена рекламы на канале"
+                    class="price-info btn btn-blue">
+                    <span>53410</span>&nbsp;<span class="fa fa-rub price-icon active"></span>
+                  </div>
+                </div>
+                <div class="order_start_date">
+                  <span>21.07.20</span>
+                </div>
+                <div class="order_time_left">
+                  <span>-</span>
+                </div>
+                <div title="Статус заказа" class="order_status">
+                  <div>На проверке</div>
+                </div>
+                <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
+                  <a href="./dashboard.html" class="btn btn-primary btn-sm r-action-btn">Подробнее</a>
+                </div>
+              </div>
+              <div class="channel-info">
+                <input type="text" placeholder="Введите текст заметки">
+              </div>
+
+              <div class="channel ribboned noted top new">
+                <div class="channel-first-part">
+                  <span class="d-none">-1001371894354</span>
+                  <div class="position-relative" data-widget="control-sidebar-shop" data-slide="true">
+                    <img title="Изображение канала" alt="Академия Джо Рогана"
+                      src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                    <span class="verified-channel-img">
+                      <img src="tgstat_images/verified.png"
+                        title="У канала есть подтвержденный владелец на сайте LinkBaza">
+                    </span>
+                  </div>
+                  <div class="channel-block-title">
+                    <div title="Название канала" class="channel-list-title" data-widget="control-sidebar-shop"
+                      data-slide="true">
+                      <b>Академия Джо Рогана</b>
+                    </div>
+                    <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank"
+                      class="goToChannel">
+                      <span>Перейти на канал</span>
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div class="d-none">
+                      <span class="channel_category_id">21</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-subscribes-column">
+                  <i title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="fas fa-user-friends"></i>
+                  <span title="Количество подписчиков на канале" data-widget="control-sidebar-shop" data-slide="true"
+                    class="table-link">
+                    7779222
+                  </span>
+                </div>
+                <div title="Ссылка на канал" class="link-channel" data-widget="control-sidebar-shop" data-slide="true">
+                  <span>http://t.me/LinkBazaBot</span>
+                </div>
+                <div title="Рекламный текст" class="long-description" data-widget="control-sidebar-shop"
+                  data-slide="true">
+                  ‼️ Бот для раскрутки телеграмм каналов
+                  ✅ Честные способы раскрутки через подборки
+                  ✅ Возможность создавать «свои» подборки, в которых будут участвовать только приглашённые Вами каналы.
+                </div>
+                <div class="buycolumn">
+                  <div class="buycolumn-text">Реклама:</div>
+                  <div data-widget="control-sidebar-shop" data-slide="true" title="Цена рекламы на канале"
+                    class="price-info btn btn-blue">
+                    <span>53410</span>&nbsp;<span class="fa fa-rub price-icon active"></span>
+                  </div>
+                </div>
+                <div class="order_start_date">
+                  <span>21.07.20</span>
+                </div>
+                <div class="order_time_left">
+                  <span>-</span>
+                </div>
+                <div title="Статус заказа" class="order_status">
+                  <div>Выполнено</div>
+                </div>
+                <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
+                  <a href="./dashboard.html" class="btn btn-primary btn-sm r-action-btn">Подробнее</a>
+                </div>
+              </div>
+              <div class="channel-info">
+                <input type="text" placeholder="Введите текст заметки">
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <aside id="rightaside" class="control-sidebar">
-      <div id="closeicon2_added" class="closeicon displayok">
-        <i class="fas fa-times"></i>
-      </div>
-      <div class="channel-selected">
-      </div>
-    </aside>
+  <aside id="rightaside" class="control-sidebar">
+    <div id="closeicon2_added" class="closeicon displayok">
+      <i class="fas fa-times"></i>
+    </div>
+    <div class="channel-selected">
+    </div>
+  </aside>
 
-    <footer id="mainfooter" class="main-footer">
-      All rights reserved.
-      <strong>Copyright &copy; 2020
-        <a href="/">LinkBaza.com</a>.</strong>
-    </footer>
-    <div id="sidebar-overlay2"></div>
+  <footer id="mainfooter" class="main-footer">
+    <div class="footer-first-part">
+      <ul class="footer-left">
+        <li><a href="/blog.html">Блог</a></li>
+        <li><a target="_blank" href="tg://resolve?domain=LinkBazaBot">Обратная связь</a></li>
+        <li><a href="/contacts.html">Контакты</a></li>
+        <li><a target="_blank" href="https://teletype.in/@botbaza/8CntyGIzBI">Справка</a></li>
+      </ul>
+      <ul class="footer-right">Поделиться:
+        <li><a href="/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="/" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+        <li><a href="/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="/" target="_blank"><i class="fab fa-vk"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-second-part">
+      Copyright &copy; 2020 <a href="/">LinkBaza.com</a>.</div>
+  </footer>
+  <div id="sidebar-overlay2"></div>
   </div>
 
   <div class="modal fade bd-example-modal-lg" id="modalCreateChannel" tabindex="-1" role="dialog" aria-hidden="true">
@@ -801,6 +1312,10 @@
       </div>
     </div>
   </div>
+
+  <!-- order_verification
+  order_approve
+  order_disapprove -->
 
   <script src="plugins/jquery/jquery.min.js"></script>
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

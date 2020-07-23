@@ -738,14 +738,15 @@ function DrawRightSidebarShop(element, el) {
       </div>
     </div>
     <div class="channel-posts">
-      <div class="channel-posts-name">Осталось: </div>
-      <div class="channel-posts-content">${element2.price2}
-        </div>
-    </div>
-    <div class="channel-views">
       <div class="channel-views-name">Дата создания: </div>
       <div class="channel-views-content">
         ${element2.date}
+      </div>
+    </div>
+    <div class="channel-views">
+      <div class="channel-posts-name">Осталось: </div>
+      <div class="channel-posts-content">
+        ${element2.price2}
       </div>
     </div>
     <div class="channel-subscribes">
@@ -754,9 +755,9 @@ function DrawRightSidebarShop(element, el) {
         ${element2.state}
       </div>
     </div>
-    <button type="button" onClick="${$("body").hasClass("catalog-page") ? "goToDashboardCatalog" : "goToDashboard"}(${element.id});$('#closeicon2_added').click();" class="btn btn-blue w100 br0">
+    <a title="Посмотреть подробную информацию о канале" href="./dashboard.html" class="btn btn-blue w100 br0">
       Подробнее
-    </button>`)
+    </a>`)
 }
 
 function reloadRightSidebarShop(id, el) {
