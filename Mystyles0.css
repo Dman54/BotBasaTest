@@ -2942,6 +2942,11 @@ a.robot-btn {
 .article-list li {
   margin-top: 6px;
 }
+.modal-text-part {
+  background-color: #fff;
+  pointer-events: auto;
+  padding: 1rem;
+}
 #modalquestion .modal-dialog {
   position: fixed;
   right: 30px;
