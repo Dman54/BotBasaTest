@@ -4702,7 +4702,14 @@ a.chat-dialoges-item {
 .main-sidebar, .main-sidebar::before {
   width: 268px;
 }
-
+.sidebar-collapse .main-sidebar, .sidebar-collapse .main-sidebar::before {
+  margin-left: -268px;
+}
+@media (max-width: 767.98px) {
+  .main-sidebar, .main-sidebar::before {
+    margin-left: -268px;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .carousel-item {
