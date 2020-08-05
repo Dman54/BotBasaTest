@@ -7124,10 +7124,10 @@ function templateAll(data) {
       <div class="position-relative" data-widget="control-sidebar2" data-slide="true">
         <img itemprop="image" title="Изображение канала" alt="${
         curItem.title
-        }" src="img/tgstat.jpg"
+        }" src="/img/tgstat.jpg"
           class="b-lazy img-thumbnail b-loaded">
         <span class="verified-channel-img">
-          <img src="img/verified.png" title="У канала есть подтвержденный владелец на сайте LinkBaza">
+          <img src="/img/verified.png" title="У канала есть подтвержденный владелец на сайте LinkBaza">
         </span>
       </div>
       <div class="channel-block-title">
@@ -7262,7 +7262,7 @@ function templateAll(data) {
       </div>
     </div>
     <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
-      <a href="dashboard.html" class="btn btn-primary btn-sm r-action-btn">${btnText}</a>
+      <a href="/dashboard.html" class="btn btn-primary btn-sm r-action-btn">${btnText}</a>
     </div>
   </div>
   <div class="channel-info">
@@ -7287,10 +7287,10 @@ function templateAll(data) {
       <div class="position-relative" data-widget="control-sidebar2" data-slide="true">
         <img title="Изображение канала" alt="${
         curItem.title
-        }" src="img/tgstat.jpg"
+        }" src="/img/tgstat.jpg"
           class="b-lazy img-thumbnail b-loaded">
         <span class="verified-channel-img">
-          <img src="img/verified.png" title="У канала есть подтвержденный владелец на сайте LinkBaza">
+          <img src="/img/verified.png" title="У канала есть подтвержденный владелец на сайте LinkBaza">
         </span>
       </div>
       <div class="channel-block-title">

@@ -2,7 +2,7 @@
 function changeRaitingListeners() {
 
   var
-    processURL = '/process_star_rating.php',
+    processURL = '../php/process_star_rating.php',
     maxStars = 5,
     output = [],
     ratingStarClass = '.star-rating_active .star-rating__item';

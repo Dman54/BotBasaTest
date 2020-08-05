@@ -169,7 +169,7 @@ function DrawRightSidebar(element) {
   sidebar.find('.channel-selected').html(`<div class="id-channel-text d-none">Номер текущего канала: <span id='id-channel-in-rightsidebar'>${element.id}</span></div>
     <div class="channel-top-block">
       <div class="channel-img">
-        <img src="img/tgstat.jpg" alt="${element.title}<">
+        <img src="/img/tgstat.jpg" alt="${element.title}<">
       </div>
       <div class="channel-header">
         <div class="channel-name">${element.title}</div>
@@ -348,7 +348,7 @@ function DrawRightSidebarPromotion(element) {
             <div class="channel-first-part">
               <a href="tg://resolve?domain=PowerfulRu">
                 <div>
-                  <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
+                  <img alt="Джо Роган в Телеграмме" src="/img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
                 </div>
               </a>
               <div class="channel-block-title">
@@ -372,7 +372,7 @@ function DrawRightSidebarPromotion(element) {
             <div class="channel-first-part">
               <a href="tg://resolve?domain=PowerfulRu">
                 <div>
-                  <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
+                  <img alt="Джо Роган в Телеграмме" src="/img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
                 </div>
               </a>
               <div class="channel-block-title">
@@ -401,7 +401,7 @@ function DrawRightSidebarPromotion(element) {
             <div class="channel-first-part">
               <a href="tg://resolve?domain=PowerfulRu">
                 <div>
-                  <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
+                  <img alt="Джо Роган в Телеграмме" src="/img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
                 </div>
               </a>
               <div class="channel-block-title">
@@ -425,7 +425,7 @@ function DrawRightSidebarPromotion(element) {
             <div class="channel-first-part">
               <a href="tg://resolve?domain=PowerfulRu">
                 <div>
-                  <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
+                  <img alt="Джо Роган в Телеграмме" src="/img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
                 </div>
               </a>
               <div class="channel-block-title">
@@ -493,7 +493,7 @@ function DrawRightSidebarSelectChannel() {
         <div class="channel-first-part">
           <a href="tg://resolve?domain=PowerfulRu">
             <div>
-              <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
+              <img alt="Джо Роган в Телеграмме" src="/img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
             </div>
           </a>
           <div class="channel-block-title">
@@ -516,7 +516,7 @@ function DrawRightSidebarSelectChannel() {
         <div class="channel-first-part">
           <a href="tg://resolve?domain=PowerfulRu">
             <div>
-              <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
+              <img alt="Джо Роган в Телеграмме" src="/img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
             </div>
           </a>
           <div class="channel-block-title">
