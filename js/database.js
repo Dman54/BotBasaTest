@@ -7124,17 +7124,17 @@ function templateAll(data) {
       <div class="position-relative" data-widget="control-sidebar2" data-slide="true">
         <img itemprop="image" title="Изображение канала" alt="${
         curItem.title
-        }" src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg"
+        }" src="img/tgstat.jpg"
           class="b-lazy img-thumbnail b-loaded">
         <span class="verified-channel-img">
-          <img src="tgstat_images/verified.png" title="У канала есть подтвержденный владелец на сайте LinkBaza">
+          <img src="img/verified.png" title="У канала есть подтвержденный владелец на сайте LinkBaza">
         </span>
       </div>
       <div class="channel-block-title">
         <div title="Название канала" class="channel-list-title" data-widget="control-sidebar2" data-slide="true">
           <b itemprop="name">${curItem.title}</b>
         </div>
-        <a title="Переход в данный канал в Telegramе" href="https://ttttt.me/joinchat/AAAAAEDvhYLA-ZoI1386Eg" target="_blank" class="goToChannel">
+        <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank" class="goToChannel">
           <span>Перейти на канал</span>
           <i class="fas fa-external-link-alt"></i>
         </a>
@@ -7262,7 +7262,7 @@ function templateAll(data) {
       </div>
     </div>
     <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
-      <a href="./dashboard.html" class="btn btn-primary btn-sm r-action-btn">${btnText}</a>
+      <a href="dashboard.html" class="btn btn-primary btn-sm r-action-btn">${btnText}</a>
     </div>
   </div>
   <div class="channel-info">
@@ -7287,17 +7287,17 @@ function templateAll(data) {
       <div class="position-relative" data-widget="control-sidebar2" data-slide="true">
         <img title="Изображение канала" alt="${
         curItem.title
-        }" src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg"
+        }" src="img/tgstat.jpg"
           class="b-lazy img-thumbnail b-loaded">
         <span class="verified-channel-img">
-          <img src="tgstat_images/verified.png" title="У канала есть подтвержденный владелец на сайте LinkBaza">
+          <img src="img/verified.png" title="У канала есть подтвержденный владелец на сайте LinkBaza">
         </span>
       </div>
       <div class="channel-block-title">
         <div title="Название канала" class="channel-list-title" data-widget="control-sidebar2" data-slide="true">
           <b>${curItem.title}</b>
         </div>
-        <a title="Переход в данный канал в Telegramе" href="https://ttttt.me/joinchat/AAAAAEDvhYLA-ZoI1386Eg" target="_blank" class="goToChannel">
+        <a title="Переход в данный канал в Telegramе" href="tg://resolve?domain=PowerfulRu" target="_blank" class="goToChannel">
           <span>Перейти на канал</span>
           <i class="fas fa-external-link-alt"></i>
         </a>

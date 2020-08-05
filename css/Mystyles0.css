@@ -103,7 +103,7 @@ a.editing:hover {
 занимает всю ширину */
 .main-body_added .nav-header_added {
   height: 73px;
-  padding-left: 0.5rem;
+  padding-left: 1.6rem;
   position: fixed;
   top: 0;
   z-index: 1040;
@@ -132,6 +132,7 @@ a.editing:hover {
   margin: 0;
   max-height: initial;
   width: 236px;
+  padding-left: 7.5px;
   /* height: auto; */
 }
 
@@ -947,13 +948,13 @@ div.r-blocks.r-blocks-landing .r-title {
   height: unset;
 }
 .r-block-bg1 {
-  background: center / cover no-repeat url('./img/banner_bg1.svg');
+  background: center / cover no-repeat url('../img/banner_bg1.svg');
 }
 .r-block-bg2 {
-  background: center / cover no-repeat url('./img/banner_bg2.svg');
+  background: center / cover no-repeat url('../img/banner_bg2.svg');
 }
 .r-block-bg3 {
-  background: center / cover no-repeat url('./img/banner_bg3.svg');
+  background: center / cover no-repeat url('../img/banner_bg3.svg');
 }
 
 /* div.r-blocks span {
@@ -2901,7 +2902,7 @@ a.robot-btn {
   vertical-align: middle;
   width: 18px;
   height: 17px;
-  background: url("./robot-small.svg");
+  background: url("../img/robot-small.svg");
 }
 .landing-block-left {
   flex: 1;
@@ -5668,6 +5669,9 @@ a.chat-dialoges-item {
 }
 
 @media (max-width: 590px) {
+    .main-body_added .nav-header_added {
+        padding-left: 0.375rem;
+    }
   .content-wrapper {
     /* padding-left: 0.9375rem;
     padding-right: 0.9375rem; */

@@ -1,4 +1,22 @@
-let GlobalIdChannel = null;
+function saveGlobalVar(name, value) {
+  localStorage.setItem(name, value); // сохраняем в localStorage значение
+}
+function getGlobalVar(name) {
+  return localStorage.getItem(name); // получаем значение свойства localStorage
+}
+
+$(function () {
+  let sectionnumber = +getGlobalVar('data-sectionContent');
+  // console.log(sectionnumber);
+  if (sectionnumber != 0) {
+    localStorage.removeItem('data-sectionContent');
+    // AllRoleLinks[sectionnumber].click();
+    AllRoleLinks.removeClass("active");
+    AllRoleSections.removeClass("active");
+    $(`[data-sectionContent=${sectionnumber}]`).addClass("active");
+    $(`[data-sectionNumber=${sectionnumber}]`).addClass("active");
+  }
+});
 
 // скрипты для открытия и закрытия меню на небольших экранах (клик по гамбургеру и значку закрытия или самому новому меню)
 $("#gamburger_added, #closeicon_added").on("click", function (e) {
@@ -27,7 +45,7 @@ let AllRoleLinks = $("[data-sectionContent]");
 AllRoleLinksToAnotherPage.on("click", function (e) {
   e.preventDefault();
   saveGlobalVar('data-sectionContent', $(this).attr('data-sectionContent'));
-  window.location.href = "./index0latest.html";
+  window.location.href = "index0latest.html";
 });
 
 // загрузка разного основного контента в зависимости от активного пункта меню слева
@@ -119,6 +137,27 @@ for (let i = 0; i < 21; i++) {
   WeekBegin.setDate(WeekBegin.getDate() + 1);
 }
 
+// pagination
+let buttonsToSidebar;
+let GlobalIdChannel = null;
+let GlobalNameChannel = null;
+let curPageSize = 10;
+let dataContainer = $('#channelsList .data-container');
+$('#channelsList').pagination({
+  dataSource: allChannels,
+  pageSize: curPageSize,
+  className: 'paginationjs-theme-blue paginationjs-big',
+  callback: function (data, pagination) {
+    dataContainer.html(templateAll(data));
+    buttonsToSidebar = $("[data-widget='control-sidebar2']");
+    buttonsToSidebar.on('click', function (e) {
+      e.preventDefault();
+      ChangeRightSidebar(this);
+    });
+    changeRaitingListeners();
+  }
+})
+
 // right sidebar open\close and reload content
 $("#closeicon2_added, #sidebar-overlay2").on('click', function () {
   sidebar.removeClass('show');
@@ -130,7 +169,7 @@ function DrawRightSidebar(element) {
   sidebar.find('.channel-selected').html(`<div class="id-channel-text d-none">Номер текущего канала: <span id='id-channel-in-rightsidebar'>${element.id}</span></div>
     <div class="channel-top-block">
       <div class="channel-img">
-        <img src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" alt="${element.title}<">
+        <img src="img/tgstat.jpg" alt="${element.title}<">
       </div>
       <div class="channel-header">
         <div class="channel-name">${element.title}</div>
@@ -307,9 +346,9 @@ function DrawRightSidebarPromotion(element) {
         <div class="channels-for-select">
           <div class="channel-for-select">
             <div class="channel-first-part">
-              <a href="https://tgstat.ru/channel/AAAAAEDvhYLA-ZoI1386Eg">
+              <a href="tg://resolve?domain=PowerfulRu">
                 <div>
-                  <img alt="Джо Роган в Телеграмме" src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                  <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
                 </div>
               </a>
               <div class="channel-block-title">
@@ -331,9 +370,9 @@ function DrawRightSidebarPromotion(element) {
           </div>
           <div class="channel-for-select">
             <div class="channel-first-part">
-              <a href="https://tgstat.ru/channel/AAAAAEDvhYLA-ZoI1386Eg">
+              <a href="tg://resolve?domain=PowerfulRu">
                 <div>
-                  <img alt="Джо Роган в Телеграмме" src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                  <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
                 </div>
               </a>
               <div class="channel-block-title">
@@ -360,9 +399,9 @@ function DrawRightSidebarPromotion(element) {
         <div class="channels-for-select">
           <div class="channel-for-select">
             <div class="channel-first-part">
-              <a href="https://tgstat.ru/channel/AAAAAEDvhYLA-ZoI1386Eg">
+              <a href="tg://resolve?domain=PowerfulRu">
                 <div>
-                  <img alt="Джо Роган в Телеграмме" src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                  <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
                 </div>
               </a>
               <div class="channel-block-title">
@@ -384,9 +423,9 @@ function DrawRightSidebarPromotion(element) {
           </div>
           <div class="channel-for-select">
             <div class="channel-first-part">
-              <a href="https://tgstat.ru/channel/AAAAAEDvhYLA-ZoI1386Eg">
+              <a href="tg://resolve?domain=PowerfulRu">
                 <div>
-                  <img alt="Джо Роган в Телеграмме" src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+                  <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
                 </div>
               </a>
               <div class="channel-block-title">
@@ -452,9 +491,9 @@ function DrawRightSidebarSelectChannel() {
     <div class="channels-for-select">
       <div class="channel-for-select">
         <div class="channel-first-part">
-          <a href="https://tgstat.ru/channel/AAAAAEDvhYLA-ZoI1386Eg">
+          <a href="tg://resolve?domain=PowerfulRu">
             <div>
-              <img alt="Джо Роган в Телеграмме" src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+              <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
             </div>
           </a>
           <div class="channel-block-title">
@@ -475,9 +514,9 @@ function DrawRightSidebarSelectChannel() {
       </div>
       <div class="channel-for-select">
         <div class="channel-first-part">
-          <a href="https://tgstat.ru/channel/AAAAAEDvhYLA-ZoI1386Eg">
+          <a href="tg://resolve?domain=PowerfulRu">
             <div>
-              <img alt="Джо Роган в Телеграмме" src="tgstat_images/4c56ff4ce4aaf9573aa5dff913df997a.jpg" class="b-lazy img-thumbnail b-loaded">
+              <img alt="Джо Роган в Телеграмме" src="img/tgstat.jpg" class="b-lazy img-thumbnail b-loaded">
             </div>
           </a>
           <div class="channel-block-title">
@@ -643,156 +682,7 @@ $('.buy-info').on('click', function (e) {
   let elWithColItemsToBuy = $('.badge.badge-danger.navbar-badge');
   elWithColItemsToBuy.html(+elWithColItemsToBuy.html() + 1);
 });
-
 $('.filter-category').on('click', function (e) {
   $('.filter-category').parent().removeClass('active');
   $(this).parent().addClass('active');
-});
-
-$('.channel-block-button input[type="checkbox"]').on('change', function (e) {
-  let allPrice = 0;
-  let allSubscribes = 0;
-  $('.shop .channel').each(function (e) {
-    if ($(this).find('input[type="checkbox"]').is(":checked")) {
-      allPrice += +$(this).find('.channel-subscribes-column span').text();
-      allSubscribes += +$(this).find('.buycolumn span:not(.fa)').text();
-    }
-  });
-  $('.shop-results-price').html(allPrice);
-  $('.shop-results-subscribes').html(allSubscribes);
-});
-
-$('.shop button[type="submit"]').on('click', function (e) {
-  $('.shop-order').toggleClass('d-none');
-});
-
-$('.posts-textarea-tools>*').on('click', function (e) {
-  let curindex = $(this).index('.posts-textarea-tools >*');
-  e.preventDefault();
-  switch (curindex) {
-    case 0:
-      document.execCommand("bold", false);
-      break;
-    case 1:
-      document.execCommand("italic", false);
-      break;
-    case 2:
-      document.execCommand("strikeThrough", false);
-      break;
-    default:
-      break;
-  }
-});
-
-if ($('body').hasClass('landing-page')) {
-  let timer = setTimeout(function (e) {
-    $('#modalquestion .modal-dialog').removeClass('d-none');
-  }, 3000);
-}
-$('#modalquestion .close-popup').on('click', function (e) {
-  $(this).closest('.modal-dialog').addClass('d-none');
-});
-
-let GlobalIdShopChannel = null;
-let GlobalNameShopChannel = null;
-
-function DrawRightSidebarShop(element, el) {
-  let element2 = {
-    "src": el.find('.img-thumbnail').attr('src'),
-    "alt": el.find('.img-thumbnail').attr('alt'),
-    "title": el.find('.channel-list-title b').text(),
-    "description": el.find('.long-description').html(),
-    "link": el.find('.link-channel').text(),
-    "state": el.find('.channel-subscribes-column').text(),
-    "price": el.find('.price-info span').text(),
-    "date": el.find('.channel-block-button').eq(0).text(),
-    "price2": el.find('.channel-block-button').eq(1).text()
-  }
-  // console.log(element2);
-  sidebar.find('.channel-selected').html(`<div class="id-channel-text d-none">Номер текущего канала: <span id='id-channel-in-rightsidebar'>${element.id}</span></div>
-    <div class="channel-top-block">
-      <div class="channel-img">
-        <img src="${element2.src}" alt="${element2.alt}<">
-      </div>
-      <div class="channel-header">
-        <div class="channel-name">${element2.title}</div>
-        <div class="channel-category">Юмор и развлечения</div>
-      </div>
-    </div>
-    <div class="channel-views">
-      <div class="channel-views-content">
-        ${element2.link}
-      </div>
-    </div>
-    <div class="channel-description">
-      <p>${element2.description}</p>
-    </div>
-    <div class="channel-adprice">
-      <div class="channel-adprice-name">
-        Стоимость рекламы:
-      </div>
-      <div class="channel-adprice-content">
-        <div class="channel-adprice-number">
-          ${element2.price}&nbsp;<span class="fa fa-rub"></span>
-        </div>
-      </div>
-    </div>
-    <div class="channel-posts">
-      <div class="channel-views-name">Дата создания: </div>
-      <div class="channel-views-content">
-        ${element2.date}
-      </div>
-    </div>
-    <div class="channel-views">
-      <div class="channel-posts-name">Осталось: </div>
-      <div class="channel-posts-content">
-        ${element2.price2}
-      </div>
-    </div>
-    <div class="channel-subscribes">
-      <div class="channel-subscribes-name">Статус: </div>
-      <div class="channel-subscribes-content">
-        ${element2.state}
-      </div>
-    </div>
-    <a title="Посмотреть подробную информацию о канале" href="./dashboard.html" class="btn btn-blue w100 br0">
-      Подробнее
-    </a>`)
-}
-
-function reloadRightSidebarShop(id, el) {
-  let channel = allChannels.find(function (channel) {
-    return channel.id == id;
-  });
-  DrawRightSidebarShop(channel, el);
-}
-
-function ChangeRightSidebarShop(el) {
-  let curChannelEl = $(el).closest('.channel');
-  id = curChannelEl.find('span')[0].textContent;
-  if (!curChannelEl.hasClass('active')) {
-    $(el).closest('.channels_list_body').find('.channel').removeClass('active');
-    curChannelEl.addClass('active');
-  }
-  if (GlobalIdShopChannel !== id) {
-    reloadRightSidebarShop(id, curChannelEl);
-    if (!sidebar.hasClass('show')) {
-      sidebar.addClass('show');
-      $('body').addClass('left-sidebar-open');
-    }
-    GlobalIdShopChannel = id;
-    GlobalNameShopChannel = allChannels.find(function (element) {
-      return element.id == id;
-    });
-    GlobalNameShopChannel = GlobalNameShopChannel.title;
-  } else {
-    sidebar.toggleClass('show');
-    $('body').toggleClass('left-sidebar-open');
-  }
-}
-
-buttonsToSidebar = $("[data-widget='control-sidebar-shop']");
-buttonsToSidebar.on('click', function (e) {
-  e.preventDefault();
-  ChangeRightSidebarShop(this);
 });
